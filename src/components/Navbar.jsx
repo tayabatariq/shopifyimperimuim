@@ -13,6 +13,8 @@ import {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+const [open, setOpen] = useState(false);
+
 
   const navLinkClasses = ({ isActive }) =>
     isActive ? "text-pink-600 font-semibold" : "hover:text-pink-600";
@@ -51,28 +53,45 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-800">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About</NavLink>
-          <div className="relative group">
-            <button className="flex items-center gap-1">What We Do ▾</button>
-            <div className="absolute hidden group-hover:block z-30 bg-white shadow-md mt-2 rounded-lg">
-              <NavLink to="/services/1" className="block px-4 py-2 hover:bg-gray-100">Service 1</NavLink>
-              <NavLink to="/services/2" className="block px-4 py-2 hover:bg-gray-100">Service 2</NavLink>
-            </div>
-          </div>
+          <div className="relative">
+      {/* Button */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1"
+      >
+        What We Do ▾
+      </button>
+
+      {/* Dropdown */}
+      {open && (
+        <div className="absolute z-30 bg-white shadow-md mt-2 rounded-lg">
+          <NavLink
+            to="/services/1"
+            className="block px-4 py-2 hover:bg-gray-100"
+            onClick={() => setOpen(false)} // 👈 close on click
+          >
+            Service 1
+          </NavLink>
+          <NavLink
+            to="/services/2"
+            className="block px-4 py-2 hover:bg-gray-100"
+            onClick={() => setOpen(false)} // 👈 close on click
+          >
+            Service 2
+          </NavLink>
+        </div>
+      )}
+    </div>
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
-         <div className="relative group">
-  <button className="flex items-center gap-1 z-50 relative">
-    Companies ▾
-  </button>
-  
-  <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-lg z-50">
-    <NavLink to="/companies/1" className="block px-4 py-2 hover:bg-gray-100">
-      Company 1
-    </NavLink>
-    <NavLink to="/companies/2" className="block px-4 py-2 hover:bg-gray-100">
-      Company 2
-    </NavLink>
-  </div>
-</div>
+          <NavLink to="/saiyan" className={navLinkClasses}>Companies</NavLink>
+
+
+
+
+
+
+
+
 
           <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink>
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
