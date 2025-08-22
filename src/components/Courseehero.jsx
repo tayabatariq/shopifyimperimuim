@@ -6,6 +6,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import CourseOverview from './CourseOverview';
+"use client";
+import { motion } from "framer-motion";
 const Courseehero = () => {
 
 
@@ -40,6 +43,47 @@ const courses = [
     link: "#",
   },
 ];
+
+ const items = [
+    {
+      icon: <ShoppingBag className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Store Setup",
+      desc: "Learn to create a fully functional Shopify store from scratch."
+    },
+    {
+      icon: <Palette className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Design & Branding",
+      desc: "Customize themes, layouts, and visuals to create a unique brand."
+    },
+    {
+      icon: <Globe className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Global Selling",
+      desc: "Learn payment gateways, shipping, and selling internationally."
+    },
+    {
+      icon: <TrendingUp className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Growth & Marketing",
+      desc: "Master SEO, ads, and email marketing to boost online sales."
+    }
+  ];
+
+   const items2 = [
+    {
+      icon: <Clock className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Program Duration",
+      desc: "4 Days | 6–8 Hours per Day of Intensive Training"
+    },
+    {
+      icon: <Users className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Who Can Join?",
+      desc: "Entrepreneurs, Freelancers, Students, and Professionals who want to build Shopify stores."
+    },
+    {
+      icon: <Award className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />,
+      title: "Certification",
+      desc: "Earn a recognized certificate after completing this professional training."
+    }
+  ];
   return (
     <>
       <section className="relative bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white py-20 px-6 text-center">
@@ -108,44 +152,34 @@ const courses = [
 
      <section className="py-16 bg-white text-gray-800">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold mb-10"
+        >
           What You’ll Learn
-        </h2>
+        </motion.h2>
 
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {/* Shopify Setup */}
-          <div className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
-            <ShoppingBag className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Store Setup</h3>
-            <p>Learn to create a fully functional Shopify store from scratch.</p>
-          </div>
-
-          {/* Design & Branding */}
-          <div className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
-            <Palette className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Design & Branding</h3>
-            <p>
-              Customize themes, layouts, and visuals to create a unique brand.
-            </p>
-          </div>
-
-          {/* Global Selling */}
-          <div className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
-            <Globe className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Global Selling</h3>
-            <p>
-              Learn payment gateways, shipping, and selling internationally.
-            </p>
-          </div>
-
-          {/* Growth & Marketing */}
-          <div className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition">
-            <TrendingUp className="w-12 h-12 text-[#c7004d] mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Growth & Marketing</h3>
-            <p>
-              Master SEO, ads, and email marketing to boost online sales.
-            </p>
-          </div>
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.2 }}
+              viewport={{ once: true }}
+              className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition"
+            >
+              {item.icon}
+              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <p>{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -195,6 +229,10 @@ const courses = [
         </Swiper>
       </div>
     </section>
+
+<CourseOverview/>
+
+    
     </>
   )
 }

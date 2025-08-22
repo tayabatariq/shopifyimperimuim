@@ -53,19 +53,27 @@ export default function Navbar() {
           <NavLink to="/about" className={navLinkClasses}>About</NavLink>
           <div className="relative group">
             <button className="flex items-center gap-1">What We Do ▾</button>
-            <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-lg">
+            <div className="absolute hidden group-hover:block z-30 bg-white shadow-md mt-2 rounded-lg">
               <NavLink to="/services/1" className="block px-4 py-2 hover:bg-gray-100">Service 1</NavLink>
               <NavLink to="/services/2" className="block px-4 py-2 hover:bg-gray-100">Service 2</NavLink>
             </div>
           </div>
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
-          <div className="relative group">
-            <button className="flex items-center gap-1">Companies ▾</button>
-            <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-lg">
-              <NavLink to="/companies/1" className="block px-4 py-2 hover:bg-gray-100">Company 1</NavLink>
-              <NavLink to="/companies/2" className="block px-4 py-2 hover:bg-gray-100">Company 2</NavLink>
-            </div>
-          </div>
+         <div className="relative group">
+  <button className="flex items-center gap-1 z-50 relative">
+    Companies ▾
+  </button>
+  
+  <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 rounded-lg z-50">
+    <NavLink to="/companies/1" className="block px-4 py-2 hover:bg-gray-100">
+      Company 1
+    </NavLink>
+    <NavLink to="/companies/2" className="block px-4 py-2 hover:bg-gray-100">
+      Company 2
+    </NavLink>
+  </div>
+</div>
+
           <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink>
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
         </nav>
