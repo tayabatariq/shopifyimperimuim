@@ -3,32 +3,25 @@ import React from "react";
 export default function Saiyan() {
   return (
     <div className="bg-white text-gray-800">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6 pt-28 pb-28">
         {/* Badge */}
-        <span className="inline-block bg-pink-100 text-pink-700 text-sm font-medium px-3 py-1 rounded-full mb-6">
-          An Imperium Media Group Subsidiary
+        <span className="inline-block bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full mb-6">
+          Shopify Store Solutions by Imperium Media Group
         </span>
 
         {/* Section 1 */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
           <img
-            src="https://imperiummedia.co.uk/img/aboutsaiyan.jpg"
-            alt="camera"
+            src="https://i.postimg.cc/QtC1stkF/cropped-image-woman-inputting-card-information-key-phone-laptop-while-shopping-online.jpg"
+            alt="Shopify Dashboard"
             className="rounded-lg shadow-md"
           />
           <div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-              Welcome to Saiyan Productions — A Division of Imperium Media Group
+              Welcome to Saiyan Productions — Shopify Experts at Imperium Media Group
             </h1>
             <p className="text-gray-600 leading-relaxed">
-              At Saiyan Productions, we specialize in precision-driven YouTube ad
-              management designed to elevate your brand and deliver measurable
-              results. Whether you’re launching your first campaign or scaling
-              an existing strategy, our expert team works closely with you to
-              create, optimize, and manage ads that perform. Backed by the
-              experience and resources of Imperium Media Group, we combine
-              strategic creativity with data-driven insights to help your
-              business thrive on the world’s most powerful video platform.
+              At Saiyan Productions, we specialize in creating and managing high-performing Shopify stores. From setup and customization to optimization and marketing, our expert team helps brands build a strong online presence. Backed by the experience and resources of Imperium Media Group, we combine creativity and analytics to boost your eCommerce success.
             </p>
           </div>
         </div>
@@ -37,21 +30,15 @@ export default function Saiyan() {
         <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
           <div className="order-2 md:order-1">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Why YouTube Advertising? <br /> Because Attention Matters.
+              Why Shopify? <br /> Because Growth Matters.
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              YouTube is more than just a video platform—it’s a search engine,
-              entertainment hub, and one of the most influential advertising
-              spaces in the digital world. With billions of views per day, the
-              opportunity to connect with your audience has never been greater.
-              Saiyan Productions harnesses this potential through targeted ad
-              placements, smart bidding strategies, and compelling creative
-              execution that turns views into action.
+              Shopify is one of the leading eCommerce platforms trusted by millions of businesses worldwide. It offers flexibility, scalability, and powerful tools to reach your audience. Saiyan Productions leverages these features with custom designs, optimized product pages, and strategic campaigns to convert visitors into loyal customers.
             </p>
           </div>
           <img
-            src="https://imperiummedia.co.uk/aboutsaiyan2.jpg"
-            alt="camera"
+            src="https://i.postimg.cc/xdxgLB6b/discount-shopping-season-with-sale.jpg"
+            alt="Shopify Products"
             className="rounded-lg shadow-md order-1 md:order-2"
           />
         </div>
@@ -59,22 +46,16 @@ export default function Saiyan() {
         {/* Section 3 */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <img
-            src="https://images.unsplash.com/photo-1519183071298-a2962eadcdb2"
-            alt="camera"
+            src="https://i.postimg.cc/B6FDtzk3/cozy-portrait-young-woman-knitted-blue-sweater-bright-pink-makeup-holding-shopping-bags-mobile-phone.jpg"
+            alt="Shopify Mobile Store"
             className="rounded-lg shadow-md"
           />
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Let’s Grow Together.
+              Let’s Build Your Store Together.
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Saiyan Productions isn’t just a service—it’s a partnership. We
-              work with brands that are serious about growth and ready to invest
-              in smart, scalable advertising. Whether you’re a startup aiming to
-              build awareness or an established business ready to dominate new
-              markets, our team is here to guide you every step of the way.
-              Discover the difference a focused YouTube ad strategy can
-              make—with Saiyan Productions, powered by Imperium.
+              Saiyan Productions is more than just a service—it’s your Shopify partner. Whether you’re launching your first online store or scaling to new markets, our team is here to guide you. With Imperium Media Group’s expertise, we ensure your eCommerce journey is smooth, profitable, and ready for the future.
             </p>
           </div>
         </div>
