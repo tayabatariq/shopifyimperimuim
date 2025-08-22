@@ -85,14 +85,6 @@ const [open, setOpen] = useState(false);
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
           <NavLink to="/saiyan" className={navLinkClasses}>Companies</NavLink>
 
-
-
-
-
-
-
-
-
           <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink>
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
         </nav>
@@ -118,7 +110,7 @@ const [open, setOpen] = useState(false);
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="md:hidden bg-white shadow-md px-6 py-4 space-y-3 font-medium text-gray-800">
+        <nav className="md:hidden bg-white flex flex-col  shadow-md px-6 py-4 space-y-3 font-medium text-gray-800">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About</NavLink>
           <NavLink to="/services" className={navLinkClasses}>What We Do</NavLink>
