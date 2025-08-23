@@ -117,6 +117,7 @@ const [open, setOpen] = useState(false);
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
           <NavLink to="/companies" className={navLinkClasses}>Companies</NavLink>
           <NavLink to="/careers" className={navLinkClasses}>Careers</NavLink>
+            <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink> {/* ✅ Added */}
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
           <div className="flex gap-3 pt-2">
             <a href="#" className="bg-[#eef0fc] p-2 rounded-full text-pink-600">
