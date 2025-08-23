@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 import { 
   RiMenuLine, 
   RiCloseLine, 
-  RiFacebookFill, 
-  RiLinkedinFill, 
   RiMapPin2Line, 
   RiTimeLine, 
   RiMailLine, 
@@ -13,8 +11,7 @@ import {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-const [open, setOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
 
   const navLinkClasses = ({ isActive }) =>
     isActive ? "text-pink-600 font-semibold" : "hover:text-pink-600";
@@ -54,49 +51,52 @@ const [open, setOpen] = useState(false);
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About</NavLink>
           <div className="relative">
-      {/* Button */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex items-center gap-1"
-      >
-        What We Do ▾
-      </button>
-
-      {/* Dropdown */}
-      {open && (
-        <div className="absolute z-30 bg-white shadow-md mt-2 rounded-lg">
-          <NavLink
-            to="/services/1"
-            className="block px-4 py-2 hover:bg-gray-100"
-            onClick={() => setOpen(false)} // 👈 close on click
-          >
-            Service 1
-          </NavLink>
-          <NavLink
-            to="/services/2"
-            className="block px-4 py-2 hover:bg-gray-100"
-            onClick={() => setOpen(false)} // 👈 close on click
-          >
-            Service 2
-          </NavLink>
-        </div>
-      )}
-    </div>
+            {/* Dropdown */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="flex items-center gap-1"
+            >
+              What We Do ▾
+            </button>
+            {open && (
+              <div className="absolute z-30 bg-white shadow-md mt-2 rounded-lg">
+                <NavLink
+                  to="/services/1"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={() => setOpen(false)}
+                >
+                  Service 1
+                </NavLink>
+                <NavLink
+                  to="/services/2"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={() => setOpen(false)}
+                >
+                  Service 2
+                </NavLink>
+              </div>
+            )}
+          </div>
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
           <NavLink to="/saiyan" className={navLinkClasses}>Companies</NavLink>
-
           <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink>
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
         </nav>
 
-        {/* Social Icons */}
+        {/* Auth Buttons (Signup & Login) */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="#" className="bg-[#eef0fc] p-2 rounded-full text-pink-600">
-            <RiFacebookFill />
-          </a>
-          <a href="#" className="bg-[#eef0fc] p-2 rounded-full text-pink-600">
-            <RiLinkedinFill />
-          </a>
+          <NavLink 
+            to="/signup" 
+            className="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition"
+          >
+            Sign Up
+          </NavLink>
+          <NavLink 
+            to="/login" 
+            className="border border-pink-600 text-pink-600 px-4 py-2 rounded-lg hover:bg-pink-50 transition"
+          >
+            Login
+          </NavLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,22 +110,30 @@ const [open, setOpen] = useState(false);
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="md:hidden bg-white flex flex-col  shadow-md px-6 py-4 space-y-3 font-medium text-gray-800">
+        <nav className="md:hidden bg-white flex flex-col shadow-md px-6 py-4 space-y-3 font-medium text-gray-800">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About</NavLink>
           <NavLink to="/services" className={navLinkClasses}>What We Do</NavLink>
           <NavLink to="/clients" className={navLinkClasses}>Clients</NavLink>
           <NavLink to="/companies" className={navLinkClasses}>Companies</NavLink>
+          <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink>
           <NavLink to="/careers" className={navLinkClasses}>Careers</NavLink>
-            <NavLink to="/courses" className={navLinkClasses}>Courses</NavLink> {/* ✅ Added */}
           <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
-          <div className="flex gap-3 pt-2">
-            <a href="#" className="bg-[#eef0fc] p-2 rounded-full text-pink-600">
-              <RiFacebookFill />
-            </a>
-            <a href="#" className="bg-[#eef0fc] p-2 rounded-full text-pink-600">
-              <RiLinkedinFill />
-            </a>
+
+          {/* Mobile Auth Buttons */}
+          <div className="flex flex-col gap-2 pt-2">
+            <NavLink 
+              to="/signup" 
+              className="bg-pink-600 text-white px-4 py-2 rounded-lg text-center hover:bg-pink-700 transition"
+            >
+              Sign Up
+            </NavLink>
+            <NavLink 
+              to="/login" 
+              className="border border-pink-600 text-pink-600 px-4 py-2 rounded-lg text-center hover:bg-pink-50 transition"
+            >
+              Login
+            </NavLink>
           </div>
         </nav>
       )}

@@ -6,6 +6,8 @@ import Contact from "../pages/Contact";
 import Course from "../pages/Course";
 import Saiyan from "../components/Saiyan";
 import ClientsPage from "../components/ClientsPage ";
+import Signup from "../components/Signup";
+import Login from "../components/Login";
 
 
 const RouterComponent = () => {
@@ -18,6 +20,9 @@ const RouterComponent = () => {
           <Route path="/courses" element={<Course />} />
           <Route path="/saiyan" element={<Saiyan />} />
           <Route path="/clients" element={<ClientsPage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login/>} />
+
 
 
         </Routes>
